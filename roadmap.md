@@ -1,9 +1,10 @@
 # Cookie Pookie site (Wafflesome replica)
 
-- [ ] Design system: cream + pink/red + cookie brown, serif display + geometric sans
-- [ ] Loader animation with logo
-- [ ] Sticky nav + hero with background VIDEO (user request)
-- [ ] Feature trio, philosophy split + stats, menu grid, "real thing" list, coffee section
-- [ ] Franchise marquee CTA, media/stories cards, footer
-- [ ] Scroll reveal animations, marquee, hover effects
-- [ ] SEO head metadata
+- [x] Design system: cream + pink/red + cookie brown, Playfair Display + Plus Jakarta Sans
+- [x] Loader animation with logo
+- [x] Sticky nav + hero with background VIDEO
+- [x] Feature trio, legacy split + stats, menu grid, promises, coffee section
+- [x] Franchise CTA, stores, media/stories cards, footer
+- [x] Scroll reveal animations, marquee, hover tilt/zoom
+- [x] SEO head metadata
+- [ ] Waiting on real address, hours and phone number from the user

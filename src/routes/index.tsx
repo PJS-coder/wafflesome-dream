@@ -292,7 +292,7 @@ function Home() {
           loading="lazy"
           className="h-[70vh] w-full object-cover"
         />
-        <div className="absolute inset-0 bg-[linear-gradient(90deg,oklch(0.28_0.06_45/0.8),transparent)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(90deg,oklch(0.24_0.05_45/0.94)_0%,oklch(0.24_0.05_45/0.72)_45%,oklch(0.24_0.05_45/0.15)_100%)]" />
         <div className="absolute inset-0 flex items-center">
           <div className="mx-auto w-full max-w-7xl px-5 md:px-8">
             <Reveal>
