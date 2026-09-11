@@ -136,16 +136,16 @@ export default function HomePage() {
         />
         <div className="absolute inset-0 bg-[linear-gradient(180deg,oklch(0.25_0.06_45/0.65),oklch(0.25_0.06_45/0.25)_40%,oklch(0.25_0.06_45/0.92))]" />
 
-        <div className="relative z-10 mx-auto w-full max-w-7xl px-5 pb-16 md:px-8 md:pb-24">
+        <div className="relative z-10 mx-auto w-full max-w-7xl px-5 pb-16 md:px-8 md:pb-24 2xl:max-w-[1400px] 2xl:px-10 2xl:pb-28">
           <Reveal delay={100}>
-            <h1 className="max-w-4xl font-display text-[12vw] leading-[0.9] text-cream md:text-[6.4rem]">
+            <h1 className="max-w-4xl font-display text-[12vw] leading-[0.9] text-cream sm:text-7xl md:text-[6.4rem] lg:text-[7.2rem] 2xl:text-[7.5rem]">
               COME GET
               <span className="block italic text-blush">some love!</span>
             </h1>
           </Reveal>
 
           <Reveal delay={360}>
-            <p className="mt-5 max-w-xl text-lg text-cream/85 md:text-xl">
+            <p className="mt-5 max-w-xl text-lg text-cream/85 md:text-xl 2xl:max-w-2xl 2xl:text-2xl">
               Freshly baked cookies, crisp Belgian waffles, cold shakes, and slow coffee served warm from our counter window.
             </p>
             <div className="mt-9 flex flex-wrap items-center gap-4">
@@ -191,7 +191,7 @@ export default function HomePage() {
       </div>
 
       {/* 4 CORE CATEGORIES */}
-      <section id="categories" className="mx-auto max-w-7xl px-5 py-20 md:px-8 md:py-28">
+      <section id="categories" className="mx-auto max-w-7xl px-5 py-20 md:px-8 md:py-28 2xl:max-w-[1400px] 2xl:px-10">
         <Reveal>
           <div className="text-center">
             <p className="text-sm font-semibold uppercase tracking-[0.4em] text-primary">What We Bake</p>
@@ -204,11 +204,11 @@ export default function HomePage() {
           </div>
         </Reveal>
 
-        <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4 2xl:gap-8">
           {categories.map((c, i) => (
             <Reveal key={c.title} delay={i * 120}>
               <article className="tilt-card zoom-media flex h-full flex-col overflow-hidden rounded-4xl border border-border bg-card shadow-soft">
-                <div className="relative h-60 overflow-hidden">
+                <div className="relative h-60 overflow-hidden 2xl:h-64">
                   <Image
                     src={c.img}
                     alt={c.title}
@@ -232,14 +232,14 @@ export default function HomePage() {
 
       {/* CAFE & STOREFRONT SHOWCASE */}
       <section id="store" className="bg-gradient-warm py-20 md:py-28">
-        <div className="mx-auto grid max-w-7xl items-center gap-14 px-5 md:grid-cols-2 md:px-8">
+        <div className="mx-auto grid max-w-7xl items-center gap-14 px-5 md:grid-cols-2 md:px-8 2xl:max-w-[1400px] 2xl:px-10 2xl:gap-16">
           <Reveal>
             <div className="zoom-media relative overflow-hidden rounded-4xl border border-border/80 bg-card shadow-lift">
               <Image
                 src={cafe5}
                 alt="Cookie Pookie cafe experience"
                 placeholder="blur"
-                className="h-[560px] w-full object-cover object-center"
+                className="h-[520px] sm:h-[560px] lg:h-[580px] w-full object-cover object-center"
               />
               <div className="absolute bottom-4 left-4 right-4 rounded-2xl bg-cocoa/85 p-4 text-cream backdrop-blur-md md:bottom-6 md:left-6 md:right-6">
                 <p className="font-display text-lg">Cookie Pookie Café & Window</p>
@@ -283,7 +283,7 @@ export default function HomePage() {
 
         {/* RED STATS BANNER */}
         <div className="mt-20 border-y border-red-950/20 bg-[#C0262B] py-12 text-white shadow-soft">
-          <div className="mx-auto max-w-7xl px-5 md:px-8">
+          <div className="mx-auto max-w-7xl px-5 md:px-8 2xl:max-w-[1400px] 2xl:px-10">
             <div className="grid grid-cols-2 gap-8 text-center sm:grid-cols-4">
               <Reveal delay={50}>
                 <div>
@@ -335,7 +335,7 @@ export default function HomePage() {
 
       {/* THE PHILOSOPHY / ABOUT SECTION */}
       <section id="philosophy" className="bg-[#F6EBE2] py-20 text-[#242424] md:py-28">
-        <div className="mx-auto grid max-w-7xl items-center gap-12 px-5 md:grid-cols-2 md:gap-16 md:px-8">
+        <div className="mx-auto grid max-w-7xl items-center gap-12 px-5 md:grid-cols-2 md:gap-16 md:px-8 2xl:max-w-[1400px] 2xl:px-10">
           {/* Left Text Content */}
           <Reveal>
             <div className="max-w-xl">
@@ -367,7 +367,7 @@ export default function HomePage() {
                 src={aboutImg}
                 alt="Wafflesome gourmet waffles & coffee storefront"
                 placeholder="blur"
-                className="h-[520px] sm:h-[580px] md:h-[640px] w-full object-cover object-center"
+                className="h-[520px] sm:h-[580px] md:h-[620px] lg:h-[640px] w-full object-cover object-center"
               />
             </div>
           </Reveal>
@@ -375,7 +375,7 @@ export default function HomePage() {
       </section>
 
       {/* MENU HIGHLIGHTS */}
-      <section id="menu" className="mx-auto max-w-7xl px-5 py-20 md:px-8 md:py-28">
+      <section id="menu" className="mx-auto max-w-7xl px-5 py-20 md:px-8 md:py-28 2xl:max-w-[1400px] 2xl:px-10">
         <Reveal>
           <div className="flex flex-wrap items-end justify-between gap-6">
             <div>
@@ -390,7 +390,7 @@ export default function HomePage() {
           </div>
         </Reveal>
 
-        <div className="mt-14 grid gap-7 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-14 grid gap-7 sm:grid-cols-2 lg:grid-cols-3 2xl:gap-8">
           {menuHighlights.map((m, i) => (
             <Reveal key={m.name} delay={(i % 3) * 120}>
               <article className="tilt-card zoom-media overflow-hidden rounded-4xl border border-border bg-card shadow-soft">
@@ -422,7 +422,7 @@ export default function HomePage() {
 
       {/* PROMISES */}
       <section className="bg-cocoa py-20 text-cream md:py-28">
-        <div className="mx-auto grid max-w-7xl gap-14 px-5 md:grid-cols-[1fr_1.1fr] md:px-8">
+        <div className="mx-auto grid max-w-7xl gap-14 px-5 md:grid-cols-[1fr_1.1fr] md:px-8 2xl:max-w-[1400px] 2xl:px-10 2xl:gap-16">
           <Reveal>
             <div>
               <p className="text-sm font-semibold uppercase tracking-[0.4em] text-caramel">The Real Deal</p>
@@ -462,11 +462,11 @@ export default function HomePage() {
           src={coffeeImg}
           alt="Artisan coffee at Cookie Pookie"
           placeholder="blur"
-          className="h-[70vh] w-full object-cover"
+          className="h-[60vh] min-h-[460px] max-h-[680px] w-full object-cover"
         />
         <div className="absolute inset-0 bg-[linear-gradient(90deg,oklch(0.24_0.05_45/0.95)_0%,oklch(0.24_0.05_45/0.75)_45%,oklch(0.24_0.05_45/0.2)_100%)]" />
         <div className="absolute inset-0 flex items-center">
-          <div className="mx-auto w-full max-w-7xl px-5 md:px-8">
+          <div className="mx-auto w-full max-w-7xl px-5 md:px-8 2xl:max-w-[1400px] 2xl:px-10">
             <Reveal>
               <div className="max-w-lg text-cream">
                 <Coffee className="h-9 w-9 text-caramel" />
@@ -483,15 +483,14 @@ export default function HomePage() {
         </div>
       </section>
 
-
       {/* MEDIA / REVIEWS */}
-      <section id="media" className="mx-auto max-w-7xl px-5 py-20 md:px-8 md:py-28">
+      <section id="media" className="mx-auto max-w-7xl px-5 py-20 md:px-8 md:py-28 2xl:max-w-[1400px] 2xl:px-10">
         <Reveal>
           <h2 className="max-w-2xl font-display text-4xl leading-tight md:text-6xl">
             People have been saying things
           </h2>
         </Reveal>
-        <div className="mt-14 grid gap-6 md:grid-cols-3">
+        <div className="mt-14 grid gap-6 md:grid-cols-3 2xl:gap-8">
           {stories.map((s, i) => (
             <Reveal key={s.title} delay={i * 130}>
               <article className="tilt-card flex h-full flex-col justify-between rounded-4xl border border-border bg-card p-8 shadow-soft">
@@ -508,7 +507,7 @@ export default function HomePage() {
 
       {/* FOOTER */}
       <footer id="contact" className="bg-cocoa pt-20 text-cream">
-        <div className="mx-auto max-w-7xl px-5 md:px-8">
+        <div className="mx-auto max-w-7xl px-5 md:px-8 2xl:max-w-[1400px] 2xl:px-10">
           <div className="grid gap-12 pb-16 md:grid-cols-[1.2fr_1fr_1fr]">
             <div>
               <Image
