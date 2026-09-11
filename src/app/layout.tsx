@@ -32,7 +32,11 @@ export const metadata: Metadata = {
     description: "Freshly baked cookies, shakes, chocolate waffles and slow coffee.",
   },
   icons: {
-    icon: "/favicon.ico",
+    icon: [
+      { url: "/logo.png", type: "image/png" },
+    ],
+    shortcut: "/logo.png",
+    apple: "/logo.png",
   },
 };
 
