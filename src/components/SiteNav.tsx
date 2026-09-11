@@ -1,15 +1,16 @@
+"use client";
+
 import { useEffect, useState } from "react";
-import { Menu, X } from "lucide-react";
-import logo from "@/assets/logo.png.asset.json";
+import Image from "next/image";
+import { Menu, X, ArrowUpRight } from "lucide-react";
 
 const links = [
   { label: "Home", href: "#home" },
+  { label: "What We Bake", href: "#categories" },
+  { label: "Our Store", href: "#store" },
+  { label: "Philosophy", href: "#philosophy" },
   { label: "Menu", href: "#menu" },
-  { label: "Legacy", href: "#legacy" },
-  { label: "Media", href: "#media" },
-  { label: "Stores", href: "#stores" },
-  { label: "Franchise", href: "#franchise" },
-  { label: "Contact", href: "#contact" },
+  { label: "Visit & Hours", href: "#contact" },
 ];
 
 export function SiteNav() {
@@ -17,7 +18,7 @@ export function SiteNav() {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 40);
+    const onScroll = () => setScrolled(window.scrollY > 30);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
@@ -27,28 +28,33 @@ export function SiteNav() {
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
         scrolled
-          ? "border-b border-border/60 bg-background/85 py-2 text-foreground backdrop-blur-xl"
-          : "py-5 text-cream [text-shadow:0_2px_18px_oklch(0.28_0.06_45/0.65)]"
+          ? "border-b border-border/70 bg-background/95 py-3 shadow-soft backdrop-blur-xl"
+          : "bg-gradient-to-b from-black/80 via-black/40 to-transparent py-5 text-cream"
       }`}
     >
       <nav className="mx-auto flex w-full max-w-7xl items-center justify-between px-5 md:px-8">
-        <a href="#home" className="flex items-center gap-3">
-          <img
-            src={logo.url}
+        <a href="#home" className="flex items-center gap-3 transition-transform duration-300 hover:scale-[1.02]">
+          <Image
+            src="/logo.png"
             alt="Cookie Pookie logo"
-            className="h-12 w-12 rounded-full object-cover md:h-14 md:w-14"
-            width={56}
-            height={56}
+            width={180}
+            height={60}
+            className="h-10 w-auto object-contain md:h-12"
+            priority
           />
-          <span className="font-display text-xl leading-none tracking-tight md:text-2xl">
-            Cookie&nbsp;Pookie
-          </span>
         </a>
 
-        <ul className="hidden items-center gap-7 text-sm font-medium lg:flex">
+        <ul className="hidden items-center gap-8 text-sm font-medium tracking-wide lg:flex">
           {links.map((l) => (
             <li key={l.label}>
-              <a href={l.href} className="underline-grow text-foreground/80 hover:text-foreground">
+              <a
+                href={l.href}
+                className={`underline-grow transition-colors ${
+                  scrolled
+                    ? "text-foreground/80 hover:text-foreground"
+                    : "text-cream/90 hover:text-cream [text-shadow:0_1px_8px_rgba(0,0,0,0.6)]"
+                }`}
+              >
                 {l.label}
               </a>
             </li>
@@ -57,15 +63,17 @@ export function SiteNav() {
 
         <div className="flex items-center gap-3">
           <a
-            href="#contact"
-            className="hidden rounded-full bg-gradient-sunset px-6 py-3 text-sm font-semibold text-primary-foreground shadow-soft transition-transform duration-300 hover:-translate-y-0.5 sm:inline-block"
+            href="#menu"
+            className="hidden items-center gap-1.5 rounded-full bg-gradient-sunset px-6 py-2.5 text-sm font-semibold text-primary-foreground shadow-lift transition-transform duration-300 hover:-translate-y-0.5 sm:inline-flex"
           >
-            Order Online
+            Explore Menu <ArrowUpRight className="h-4 w-4" />
           </a>
           <button
             aria-label="Toggle menu"
             onClick={() => setOpen((v) => !v)}
-            className="grid h-11 w-11 place-items-center rounded-full border border-border bg-card lg:hidden"
+            className={`grid h-11 w-11 place-items-center rounded-full border transition-colors lg:hidden ${
+              scrolled ? "border-border bg-card text-foreground" : "border-cream/30 bg-black/40 text-cream"
+            }`}
           >
             {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </button>
@@ -73,14 +81,14 @@ export function SiteNav() {
       </nav>
 
       {open && (
-        <div className="mx-5 mt-3 rounded-3xl border border-border bg-card p-5 shadow-soft lg:hidden">
-          <ul className="grid gap-3 text-base">
+        <div className="mx-5 mt-3 rounded-3xl border border-border bg-card p-6 shadow-lift lg:hidden">
+          <ul className="grid gap-3 text-base font-medium">
             {links.map((l) => (
               <li key={l.label}>
                 <a
                   href={l.href}
                   onClick={() => setOpen(false)}
-                  className="block py-1 text-foreground/85"
+                  className="block py-2 text-foreground/90 transition-colors hover:text-primary"
                 >
                   {l.label}
                 </a>
